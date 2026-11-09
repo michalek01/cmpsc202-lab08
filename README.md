@@ -42,16 +42,16 @@ Starting at Node $A$, trace Dijkstra's algorithm. Fill in the tracker table belo
 | Step | Current Node | Neighbors to Check | `dist` Map | `visited` Set | 
 | :--- | :--- | :--- | :--- | :--- | 
 | 0 | $A$ | $B$, $C$ | $A$:0, $B$:4, $C$:2 | { } | 
-| 1 | | | | | 
-| 2 | | | | | 
-| 3 | | | | | 
-| 4 | | | | | 
+| 1 | C | B,D,E |B:1, D:8, E:10, C:0       | {A} | 
+| 2 | B | A,C,D |B:0, C:1, D:5, A:4        | {C} | 
+| 3 | D | B,C,E | D:0, B:5, C:8, E:2       | {B} | 
+| 4 | E | C,D   |E:0, C:10, D:2            | {E} | 
 
 **Conceptual Question:**
 When we add a vertex to the "visited" set, why are we 100% certain we have found the absolute shortest path to that node? 
 > *Your answer here*
 
----
+---Because the explored node will be the node with lowest node weighted. So when A is the start it will go to C because its weight is 2 instead of the weight of 4 that would be the case if A went to B. Also adding the visisted set makes sure the algorithm doesnt go to a node that was already explored. 
 
 ## Part 3: Assumptions
 
