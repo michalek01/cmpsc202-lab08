@@ -97,7 +97,9 @@ Standard Dijkstra's algorithm only understands *edges* and *edge weights*. It do
 1. How should you represent the paths with stairs in your graph so the algorithm never tries to use them?
 
    > *Your answer here*
+   Remove the edges from the paths. This will make the algorithmn not look at those nodes as a possibility. If there is no edge, the algorithm will not try to calculate that path in the shortest path
 
 2. How can you account for the $3$-minute waiting time at busy crosswalk intersections using *only* edge weights? (Hint: Think about how you could modify the weights of edges connecting to that intersection).
 
    > *Your answer here*
+   If there was more a time for that interesection you would add more weight to that intersection. This puts more of a cost taking that route versus other.
