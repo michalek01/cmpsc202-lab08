@@ -16,14 +16,14 @@ BFS is excellent for finding the shortest path in an unweighted graph. Let's see
 
 **Questions:**
 1. If you run a standard BFS starting at Node $A$, looking for Node $D$, which path will the BFS algorithm discover first? Why?
-   > *Your answer here*
-BFS will return A - D because BFS will explore A's closest neighbors which is B and D. D is the goal so BFS will explore that node first before exploring B or C. 
+   > *BFS will return A - D because BFS will explore A's closest neighbors which is B and D. D is the goal so BFS will explore that node first before exploring B or C. *
+
 2. What is the total weight of the path BFS found? What is the total weight of the alternative path? 
-   > *Your answer here*
-100 is the weight of the return path while the alternative route is 9.
+   > *100 is the weight of the return path while the alternative route is 9.*
+
 3. How does the definition of "shortest path" change when moving from unweighted graphs to weighted graphs?
-   > *Your answer here*
-The shortest path with no weight is the path with the lowest amount of nodes exploreded while the weight graph puts a value on each explored node. So the shortest path in figure 1 while beoing weighted is A-B-C-D
+   > *The shortest path with no weight is the path with the lowest amount of nodes exploreded while the weight graph puts a value on each explored node. So the shortest path in figure 1 while beoing weighted is A-B-C-D*
+
 ---
 
 ## Part 2: Dijkstra's Algorithm
@@ -49,9 +49,9 @@ Starting at Node $A$, trace Dijkstra's algorithm. Fill in the tracker table belo
 
 **Conceptual Question:**
 When we add a vertex to the "visited" set, why are we 100% certain we have found the absolute shortest path to that node? 
-> *Your answer here*
+> *Because the explored node will be the node with lowest node weighted. So when A is the start it will go to C because its weight is 2 instead of the weight of 4 that would be the case if A went to B. Also adding the visisted set makes sure the algorithm doesnt go to a node that was already explored. *
 
----Because the explored node will be the node with lowest node weighted. So when A is the start it will go to C because its weight is 2 instead of the weight of 4 that would be the case if A went to B. Also adding the visisted set makes sure the algorithm doesnt go to a node that was already explored. 
+---
 
 ## Part 3: Assumptions
 
@@ -63,16 +63,16 @@ Dijkstra's algorithm relies on an assumption about the weights. Let's see what h
 Trace Dijkstra's algorithm starting from Node $A$ to find the shortest path to Node $C$.
 
 1. Which node does Dijkstra's algorithm visit first after $A$?
-   > *Your answer here*
+   > *It will explore C because its cost it 1 instead of the weight of 2 that b has.*
 
 2. What will Dijkstra's algorithm declare as the shortest path to $C$, and what is its weight?
-   > *Your answer here*
+   > *A - B - C because of the -5 in the problem from B to C. The actual cost for this -3*
 
 3. Look at the graph manually. What is the *actual* shortest path from $A$ to $C$, and what is its total weight? 
-   > *Your answer here*
+   > *A - C is the actual shortest path as C is the a neighbor of A and the cost is 1*
 
 4. **The Trap:** Explain exactly *why* Dijkstra's algorithm failed to find the correct shortest path in this scenario.
-   > *Your answer here*
+   > *The negative can lead the algorithm to go for a longer route because theres a reduce cost in the search. The algorithm when weight is a aspect of the graph, will prioritze that over the shortest path*
 
 ---
 
@@ -96,10 +96,10 @@ Standard Dijkstra's algorithm only understands *edges* and *edge weights*. It do
 
 1. How should you represent the paths with stairs in your graph so the algorithm never tries to use them?
 
-   > *Your answer here*
-   Remove the edges from the paths. This will make the algorithmn not look at those nodes as a possibility. If there is no edge, the algorithm will not try to calculate that path in the shortest path
+   > *Remove the edges from the paths. This will make the algorithmn not look at those nodes as a possibility. If there is no edge, the algorithm will not try to calculate that path in the shortest path*
+   
 
 2. How can you account for the $3$-minute waiting time at busy crosswalk intersections using *only* edge weights? (Hint: Think about how you could modify the weights of edges connecting to that intersection).
 
-   > *Your answer here*
-   If there was more a time for that interesection you would add more weight to that intersection. This puts more of a cost taking that route versus other.
+   > * If there was more a time for that interesection you would add more weight to that intersection. This puts more of a cost taking that route versus other.*
+  
